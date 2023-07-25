@@ -95,7 +95,7 @@ function App() {
         <Rating key={`rating ${index}`}>{rating}</Rating>
       ))}
       {driverCards.map((driverCard, index) => (
-        <DriverCard key={index} {...driverCard} />
+        <DriverCard key={`drivercard ${index}`} driverCard={driverCard} />
       ))}
     </div>
   );

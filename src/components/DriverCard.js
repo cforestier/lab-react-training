@@ -1,14 +1,15 @@
 import Rating from './Rating';
 
 function DriverCard(props) {
+  console.log(props);
   return (
     <div>
-      <img src={props.img} alt={`driver ${props.name}`} />
-      <div>{props.name}</div>
+      <img src={props.driverCard.img} alt={`driver ${props.driverCard.name}`} />
+      <div>{props.driverCard.name}</div>
       <div>
-        <Rating>{props.rating}</Rating>
+        <Rating>{props.driverCard.rating}</Rating>
       </div>
-      <div>{`${props.car.model} - ${props.car.licensePlate}`}</div>
+      <div>{`${props.driverCard.car.model} - ${props.driverCard.car.licensePlate}`}</div>
     </div>
   );
 }
