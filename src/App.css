@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.credit-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.credit-card {
+  display: flex;
+  width: 25%;
+  border-radius: 7px;
+  margin-top: 3vh;
+  flex-direction: column;
+}
+
+.credit-card:first-child {
+}
