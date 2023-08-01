@@ -1,7 +1,6 @@
 import Rating from './Rating';
 
 function DriverCard(props) {
-  console.log(props);
   return (
     <div>
       <img src={props.driverCard.img} alt={`driver ${props.driverCard.name}`} />
