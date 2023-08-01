@@ -6,6 +6,7 @@ import Random from './components/Random';
 import CreditCard from './components/CreditCard';
 import Rating from './components/Rating';
 import DriverCard from './components/DriverCard';
+import LikeButton from './components/LikeButton';
 
 function App() {
   const driverCards = [
@@ -97,6 +98,7 @@ function App() {
       {driverCards.map((driverCard, index) => (
         <DriverCard key={`drivercard ${index}`} driverCard={driverCard} />
       ))}
+      <LikeButton />
     </div>
   );
 }
