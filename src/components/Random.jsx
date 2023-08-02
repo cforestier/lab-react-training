@@ -5,7 +5,7 @@ function Random(props) {
   return (
     <div>
       <p>
-        Random value between {props.min} and {props.max} =>
+        Random value between {props.min} and {props.max} ={'>'}
         {randomNumber(props.min, props.max)}
       </p>
     </div>

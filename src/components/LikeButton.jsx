@@ -1,4 +1,4 @@
-import { Button, Space } from 'antd';
+import { Button } from 'antd';
 import { useState } from 'react';
 
 function LikeButton() {
@@ -6,7 +6,7 @@ function LikeButton() {
   const [numberOfClicks, setNumberOfClicks] = useState(0);
 
   const increaseClicks = () => setNumberOfClicks(numberOfClicks + 1);
-  const changeBackGroundColor = () => {
+  const getColor = () => {
     const colorIndex = numberOfClicks % listOfColors.length;
     return listOfColors[colorIndex];
   };
@@ -16,9 +16,9 @@ function LikeButton() {
         type="primary"
         className="like-button"
         onClick={increaseClicks}
-        style={{ backgroundColor: changeBackGroundColor() }}
+        style={{ backgroundColor: getColor() }}
       >
-        {numberOfClicks} Like
+        {numberOfClicks} {numberOfClicks <= 1 ? 'Like' : 'Likes'}
       </Button>
     </div>
   );

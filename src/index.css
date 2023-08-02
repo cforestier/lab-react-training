@@ -12,6 +12,44 @@ code {
     monospace;
 }
 
-.like-button {
-  background-color: green;
+.square {
+  height: 25px;
+  width: 25px;
+  border: solid;
+  border-color: black;
+}
+
+.square:nth-child(even) {
+  background-color: red;
+}
+
+.facebook-repertory {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.facebook {
+  display: flex;
+  width: 50%;
+  border: solid;
+  flex-direction: row;
+}
+.facebook-country-selected {
+  display: flex;
+  width: 50%;
+  border: solid;
+  flex-direction: row;
+  background-color: rgb(102, 102, 200);
+}
+
+.student-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.facebook img {
+  width: 150px;
 }
