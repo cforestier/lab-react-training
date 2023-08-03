@@ -12,7 +12,8 @@ function SignupPage() {
 
   const [isMailValid, setIsMailValid] = useState(false);
   const isNationalityValid = nationality !== 'select';
-  const isPasswordValid = password.length > 3;
+  const isPasswordValid =
+    /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/;
   const isFormValid = isMailValid && isNationalityValid && isPasswordValid;
   const handleEmail = (e) => {
     setIsMailValid(emailPattern.test(e.target.value));
@@ -69,6 +70,13 @@ function SignupPage() {
           }
           required
         />
+        {!isPasswordValid && isSubmitted && (
+          <span>
+            Password must contain one digit from 1 to 9, one lowercase letter,
+            one uppercase letter, one special character, no space, and it must
+            be 8-16 characters long.
+          </span>
+        )}
 
         <label>Nationality</label>
         <select
@@ -101,8 +109,8 @@ function SignupPage() {
             {nationality === 'german'
               ? 'Hallo!'
               : nationality === 'french'
-              ? 'Bonjour'
-              : 'Hello'}
+              ? 'Bonjour!'
+              : 'Hello!'}
           </p>
           <p>your Email is : {user.email}</p>
           <p>your email address is correct</p>

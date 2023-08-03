@@ -12,14 +12,14 @@ const initialRandomNumber = Math.floor(Math.random() * 7);
 
 function Dice() {
   const [randomNumber, setRandomNumber] = useState(initialRandomNumber);
-  const getRandomInt = () => {
+  const getRandomNumber = () => {
     setRandomNumber(Math.floor(Math.random() * 7));
   };
 
   const handleClickDice = () => {
     setRandomNumber(0);
     setTimeout(() => {
-      getRandomInt();
+      getRandomNumber();
     }, 1000);
   };
   return (
