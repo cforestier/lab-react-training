@@ -7,11 +7,15 @@ function SignupPage() {
   const [psw, setPsw] = useState('');
   const [nationality, setNationality] = useState('select');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [user, setUser] = useState(undefined);
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  const [isValid, setIsValid] = useState(false);
+  const [isMailValid, setIsMailValid] = useState(false);
+  const isNationalityValid = nationality !== 'select';
+  const isPasswordValid = true;
+  const isFormValid = isMailValid && isNationalityValid && isPasswordValid;
   const handleEmail = (e) => {
-    setIsValid(emailPattern.test(e.target.value));
+    setIsMailValid(emailPattern.test(e.target.value));
     setEmail(e.target.value);
   };
   const handlePsw = (e) => setPsw(e.target.value);
@@ -22,8 +26,9 @@ function SignupPage() {
     handleSubmit();
   };
   const handleSubmit = (e) => {
-    if (isValid) {
+    if (isFormValid) {
       const newUser = { email, psw, nationality };
+      setUser(newUser);
     } else {
     }
   };
@@ -45,7 +50,9 @@ function SignupPage() {
           onChange={handleEmail}
           pattern={emailPattern}
           required
+          style={isMailValid ? undefined : { border: 'red solid 1px' }}
         />
+        {!isMailValid && isSubmitted && <span>Error on mail</span>}
         <label>
           <b>Password</b>
         </label>
@@ -63,6 +70,11 @@ function SignupPage() {
           name="nationality"
           value={nationality}
           onChange={handleNationality}
+          style={
+            isSubmitted && !isNationalityValid
+              ? { border: 'red solid 1px' }
+              : undefined
+          }
         >
           <option value="select" disabled>
             Select
@@ -77,7 +89,7 @@ function SignupPage() {
           </Button>
         </div>
       </form>
-      {isSubmitted && isValid && (
+      {user && (
         <div>
           <hr />
           <p>
@@ -87,7 +99,7 @@ function SignupPage() {
               ? 'Bonjour'
               : 'Hello'}
           </p>
-          <p>your Email is : {email}</p>
+          <p>your Email is : {user.email}</p>
           <p>your email address is correct</p>
         </div>
       )}
