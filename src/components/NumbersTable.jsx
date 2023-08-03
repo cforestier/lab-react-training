@@ -1,7 +1,9 @@
 function NumbersTable({ limit }) {
   let limitArray = [];
-  for (let i = 1; i <= limit; i++) {
+  let i = 0;
+  while (i <= limit) {
     limitArray.push(i);
+    i++;
   }
   return (
     <div style={{ display: 'flex' }}>
