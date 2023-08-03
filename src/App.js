@@ -12,6 +12,7 @@ import Dice from './components/Dice';
 import Carousel from './components/Carousel';
 import NumbersTable from './components/NumbersTable';
 import Facebook from './components/Facebook';
+import SignupPage from './components/SignupPage';
 
 function App() {
   const driverCards = [
@@ -116,6 +117,7 @@ function App() {
       />
       <NumbersTable limit={12} />
       <Facebook />
+      <SignupPage />
     </div>
   );
 }
