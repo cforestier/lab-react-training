@@ -53,7 +53,12 @@ function SignupPage() {
           required
           style={{ border: `${isMailValid ? 'green' : 'red'} solid 2px` }}
         />
-        {!isMailValid && isSubmitted && <span>Error on mail</span>}
+        {!isMailValid && isSubmitted && (
+          <span>
+            Error on mail, must contain "@" and "." followed by 2 letters
+            minimum
+          </span>
+        )}
         <label>
           <b>Password</b>
         </label>
