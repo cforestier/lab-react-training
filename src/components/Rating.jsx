@@ -1,5 +1,5 @@
-function Rating(props) {
-  const stars = parseInt(Math.round(props.children));
+function Rating({ children }) {
+  const stars = parseInt(Math.round(children));
   const fullStars = '★'.repeat(stars);
   const emptyStars = '☆'.repeat(5 - stars);
 

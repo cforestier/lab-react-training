@@ -1,9 +1,9 @@
 import React from 'react';
 
-function IdCard(props) {
+function IdCard({ listOfStudents }) {
   return (
     <div>
-      {props.listOfStudents.map((student) => (
+      {listOfStudents.map((student) => (
         <div key={`div ${student.lastName}`}>
           <picture key={`picture ${student.lastName}`}>
             <source srcSet={student.picture} media="(orientation: portrait)" />

@@ -1,10 +1,8 @@
-function Greetings(props) {
+function Greetings({ lang, children }) {
   return (
     <div>
-      {props.lang && props.lang === 'de' ? <p>Hallo {props.children}</p> : null}
-      {props.lang && props.lang === 'fr' ? (
-        <p>Bonjour {props.children}</p>
-      ) : null}
+      {lang && lang === 'de' ? <p>Hallo {children}</p> : null}
+      {lang && lang === 'fr' ? <p>Bonjour {children}</p> : null}
     </div>
   );
 }

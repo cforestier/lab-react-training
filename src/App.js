@@ -14,7 +14,6 @@ import NumbersTable from './components/NumbersTable';
 import Facebook from './components/Facebook';
 import SignupPage from './components/SignupPage';
 import RGBColorPicker from './components/RGBColorPicker';
-import SingleColorPicker from './components/SingleColorPicker';
 
 function App() {
   const driverCards = [

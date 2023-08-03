@@ -1,7 +1,7 @@
-function CreditCard(props) {
+function CreditCard({ listOfCreditCards }) {
   return (
     <div className="credit-cards">
-      {props.listOfCreditCards.map((creditCard, index) => (
+      {listOfCreditCards.map((creditCard, index) => (
         <div
           key={`${creditCard}${index}`}
           className="credit-card"
