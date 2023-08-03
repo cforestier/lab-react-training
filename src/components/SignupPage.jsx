@@ -4,7 +4,7 @@ import { isValidElement, useState } from 'react';
 
 function SignupPage() {
   const [email, setEmail] = useState('');
-  const [psw, setPsw] = useState('');
+  const [password, setPassword] = useState('');
   const [nationality, setNationality] = useState('select');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [user, setUser] = useState(undefined);
@@ -12,13 +12,13 @@ function SignupPage() {
 
   const [isMailValid, setIsMailValid] = useState(false);
   const isNationalityValid = nationality !== 'select';
-  const isPasswordValid = true;
+  const isPasswordValid = password.length > 3;
   const isFormValid = isMailValid && isNationalityValid && isPasswordValid;
   const handleEmail = (e) => {
     setIsMailValid(emailPattern.test(e.target.value));
     setEmail(e.target.value);
   };
-  const handlePsw = (e) => setPsw(e.target.value);
+  const handlePsw = (e) => setPassword(e.target.value);
   const handleNationality = (e) => setNationality(e.target.value);
   const handleButtonClick = (e) => {
     e.preventDefault();
@@ -27,7 +27,7 @@ function SignupPage() {
   };
   const handleSubmit = (e) => {
     if (isFormValid) {
-      const newUser = { email, psw, nationality };
+      const newUser = { email, psw: password, nationality };
       setUser(newUser);
     } else {
     }
@@ -50,7 +50,7 @@ function SignupPage() {
           onChange={handleEmail}
           pattern={emailPattern}
           required
-          style={isMailValid ? undefined : { border: 'red solid 1px' }}
+          style={{ border: `${isMailValid ? 'green' : 'red'} solid 2px` }}
         />
         {!isMailValid && isSubmitted && <span>Error on mail</span>}
         <label>
@@ -60,8 +60,13 @@ function SignupPage() {
           type="password"
           placeholder="Enter Password"
           name="psw"
-          value={psw}
+          value={password}
           onChange={handlePsw}
+          style={
+            isSubmitted
+              ? { border: `${isPasswordValid ? 'green' : 'red'} solid 2px` }
+              : undefined
+          }
           required
         />
 

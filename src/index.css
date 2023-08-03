@@ -53,3 +53,9 @@ code {
 .facebook img {
   width: 150px;
 }
+
+.single-color-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -10,7 +10,7 @@ function IdCard(props) {
             <img src={student.picture} alt="" />
           </picture>
           <ul>
-            <li>First Name: {student.fisrtName}</li>
+            <li>First Name: {student.firstName}</li>
             <li>Last Name: {student.lastName}</li>
             <li>Gender: {student.gender}</li>
             <li>Height: {student.height}</li>

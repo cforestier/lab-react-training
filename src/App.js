@@ -1,7 +1,7 @@
 import './App.css';
 import BoxColor from './components/BoxColor';
 import Greetings from './components/Greetings';
-import IdCard from './components/IdCard';
+import IdCards from './components/IdCards';
 import Random from './components/Random';
 import CreditCard from './components/CreditCard';
 import Rating from './components/Rating';
@@ -13,6 +13,8 @@ import Carousel from './components/Carousel';
 import NumbersTable from './components/NumbersTable';
 import Facebook from './components/Facebook';
 import SignupPage from './components/SignupPage';
+import RGBColorPicker from './components/RGBColorPicker';
+import SingleColorPicker from './components/SingleColorPicker';
 
 function App() {
   const driverCards = [
@@ -90,7 +92,7 @@ function App() {
   ];
   return (
     <div className="App">
-      <IdCard listOfStudents={listOfStudents} />
+      <IdCards listOfStudents={listOfStudents} />
       <Greetings lang="de">Ludwig</Greetings>
       <Greetings lang="fr">François</Greetings>
       <Random min={1} max={6} />
@@ -118,6 +120,7 @@ function App() {
       <NumbersTable limit={12} />
       <Facebook />
       <SignupPage />
+      <RGBColorPicker />
     </div>
   );
 }
