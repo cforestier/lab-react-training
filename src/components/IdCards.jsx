@@ -7,7 +7,7 @@ function IdCard({ listOfStudents }) {
         <div key={`div ${student.lastName}`}>
           <picture key={`picture ${student.lastName}`}>
             <source srcSet={student.picture} media="(orientation: portrait)" />
-            <img src={student.picture} alt="" />
+            <img src={student.picture} alt={`${student.lastName}`} />
           </picture>
           <ul>
             <li>First Name: {student.firstName}</li>
